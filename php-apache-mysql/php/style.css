@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div>h1 {
+    font-weight: lighter;
+}
+
+div>h2 {
+    font-weight: bold;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+div>:nth-child(n) {
+    margin: 0 20px 0 20px;
+}
