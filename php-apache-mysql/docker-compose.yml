@@ -1,22 +1,25 @@
 version: "3"
 services:
   php:
-    image: php:7.2-apache
+    image: php:7.2-apache # Uma imagem do php com apache
+    container_name: mrbrunelli-php
     volumes:
-      - ./php:/var/www/html/
+      - ./php:/var/www/html/ # Copiar a pasta /php para o container
     ports:
       - 80:80
     links:
-      - db
+      - db # Conexão ativa com o container do banco de dados
   db:
     image: mysql:8.0
+    container_name: mrbrunelli-mysql
     volumes:
-      - /var/lib/mysql
+      - /var/lib/mysql # Aqui não estou copiando nada da máquina host
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=teste
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.0.2
+    container_name: mrbrunelli-phpmyadmin
     volumes:
       - /sessions
     ports:
