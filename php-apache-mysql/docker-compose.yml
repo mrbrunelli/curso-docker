@@ -1,7 +1,10 @@
 version: "3"
 services:
   php:
-    image: php:7.2-apache # Uma imagem do php com apache
+    # image: php:7.2-apache # Uma imagem do php com apache
+    build:
+      context: . # Informa onde está o Dockerfile a ser executado
+      dockerfile: Dockerfile
     container_name: mrbrunelli-php
     volumes:
       - ./php:/var/www/html/ # Copiar a pasta /php para o container
